@@ -6,7 +6,7 @@ const MyNav = () => {
     <Navbar bg="dark" variant="dark">
       <Container>
         <Link className="navbar-brand" to="/">
-          News
+          Spaceflight News
         </Link>
       </Container>
     </Navbar>

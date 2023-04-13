@@ -12,10 +12,10 @@ const Notizia = ({ imageUrl, title, newsSite, id }: NewsProps) => {
   const navigate = useNavigate();
 
   return (
-    <Card>
-      <Card.Img variant="top" src={imageUrl} />
+    <Card className="card">
+      <Card.Img className="cardImg" variant="top" src={imageUrl} />
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
+        <Card.Title className="cardTitle">{title}</Card.Title>
         <Card.Text>{newsSite}</Card.Text>
         <Button onClick={() => navigate(`/details/${id}`)} variant="primary">
           Scopri di più

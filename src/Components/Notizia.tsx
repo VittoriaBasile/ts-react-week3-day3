@@ -1,15 +1,23 @@
 import { Card, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-const Notizia = () => {
+
+interface NewsProps {
+  imageUrl: string;
+  title: string;
+  newsSite: string;
+  id: number;
+}
+
+const Notizia = ({ imageUrl, title, newsSite, id }: NewsProps) => {
   const navigate = useNavigate();
 
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src="notizia.imageUrl" />
+    <Card>
+      <Card.Img variant="top" src={imageUrl} />
       <Card.Body>
-        <Card.Title>notizia.title</Card.Title>
-        <Card.Text>notizia.newsSite</Card.Text>
-        <Button onClick={() => navigate("/details/notizia.id")} variant="primary">
+        <Card.Title>{title}</Card.Title>
+        <Card.Text>{newsSite}</Card.Text>
+        <Button onClick={() => navigate(`/details/${id}`)} variant="primary">
           Scopri di più
         </Button>
       </Card.Body>

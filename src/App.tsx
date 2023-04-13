@@ -1,18 +1,21 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MyNav from "./Components/MyNav";
+import Home from "./Components/Home";
+import Detail from "./Components/Details";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <MyNav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/details/:id" element={<Detail />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

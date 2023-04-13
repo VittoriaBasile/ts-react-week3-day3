@@ -1,9 +1,14 @@
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
+import Notizia from "./Notizia";
 
 const Home = () => {
   return (
     <Container>
-      <h1>Home</h1>
+      <Row xs={2} md={4} lg={5}>
+        <Col>
+          <Notizia />
+        </Col>
+      </Row>
     </Container>
   );
 };
